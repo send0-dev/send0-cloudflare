@@ -1,0 +1,1 @@
+import{a as e}from"./query-state-DG2rTAnl.js";var t=t=>t.includes(`*`)?`All events`:t.length<=2?t.join(`, `):e(t.length,`event`);export{t};

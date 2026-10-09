@@ -1,0 +1,1 @@
+import{$ as e,s as t}from"./button-nn0RnPkr.js";import{t as n}from"./status-icon-VpgH03EA.js";var r=e();function i({status:e,className:i}){return(0,r.jsxs)(`span`,{className:t(`inline-flex items-center gap-1.5 text-xs text-muted-foreground`,i),children:[(0,r.jsx)(n,{status:e}),(0,r.jsx)(`span`,{className:`capitalize`,children:e.replace(/_/g,` `)})]})}export{i as t};

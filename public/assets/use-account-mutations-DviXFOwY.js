@@ -1,0 +1,1 @@
+import{Q as e,b as t}from"./button-nn0RnPkr.js";import{n,r}from"./auth-client-BPpJJams.js";function i(){let i=e();return t({mutationFn:n.updateProfile,onSuccess:e=>i.setQueryData(r.me,e)})}function a(){return t({mutationFn:n.changePassword})}function o(){return t({mutationFn:n.revokeOtherSessions})}export{o as n,i as r,a as t};

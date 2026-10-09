@@ -1,0 +1,63 @@
+{
+  "name": "send0-cloudflare",
+  "version": "0.2.0",
+  "private": true,
+  "description": "send0 in one Cloudflare Worker: an open-source email API where the inbox is the core object.",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/send0-dev/send0-v2"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "HYPERDRIVE": {
+        "description": "Your Postgres, e.g. a free [Neon](https://neon.tech) database. Paste its connection string; send0 creates its tables on first start."
+      },
+      "BLOBS": {
+        "description": "R2 bucket for raw mail and attachments."
+      },
+      "EVENTS": {
+        "description": "Queue for webhook fan-out and delivery retries."
+      },
+      "HUB": {
+        "description": "Durable Object for real-time events: SSE, WebSocket and the `wait` long-poll."
+      },
+      "RL_KEY": {
+        "description": "Rate limit: requests per API key (or dashboard user), 600 a minute."
+      },
+      "RL_KEY_SEND": {
+        "description": "Rate limit: sends, replies, forwards and draft approvals per API key, 60 a minute."
+      },
+      "RL_IP": {
+        "description": "Rate limit: failed authentication and download links per client IP, 60 a minute."
+      },
+      "MAIL_DOMAINS": {
+        "description": "Domains you receive mail on, comma-separated, like `agents.acme.com`. Each must be on Cloudflare with **Email Routing** enabled."
+      },
+      "SES_REGION": {
+        "description": "The AWS region of your verified SES identity, like `us-east-1`."
+      },
+      "ALLOW_SIGNUP": {
+        "description": "Leave `false`: only OWNER_EMAIL can sign up, everyone else joins by invite."
+      },
+      "SECRET_KEY": {
+        "description": "Signs download links. At least 32 characters: `openssl rand -hex 32`."
+      },
+      "OWNER_EMAIL": {
+        "description": "Your email. The first account, who becomes the owner, must use it."
+      },
+      "SES_ACCESS_KEY_ID": {
+        "description": "Access key of an IAM user allowed `ses:SendRawEmail` for your SES identity."
+      },
+      "SES_SECRET_ACCESS_KEY": {
+        "description": "Secret key of that IAM user."
+      }
+    }
+  }
+}

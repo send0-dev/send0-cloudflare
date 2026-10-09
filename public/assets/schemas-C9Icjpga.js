@@ -1,0 +1,1 @@
+import{ft as e}from"./index-BOKf0T7O.js";var t=e().trim().min(1,`Enter your email.`).email(`Enter a valid email address.`),n=e().min(10,`Use at least 10 characters.`).max(200,`Use at most 200 characters.`);export{n,t};

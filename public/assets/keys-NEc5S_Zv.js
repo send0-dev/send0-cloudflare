@@ -1,0 +1,1 @@
+var e={all:[`messages`],list:t=>[...e.all,`list`,t],detail:t=>[...e.all,`detail`,t]};export{e as t};

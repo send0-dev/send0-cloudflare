@@ -1,0 +1,1 @@
+var e={all:[`inboxes`],list:()=>[...e.all,`list`],detail:t=>[...e.all,`detail`,t],threads:t=>[...e.all,`threads`,t],thread:(t,n)=>[...e.all,`thread`,t,n]};export{e as t};
