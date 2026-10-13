@@ -1,0 +1,1 @@
+var e=e=>e?e.name?`${e.name} <${e.email}>`:e.email:`unknown sender`,t=e=>e?.name||e?.email||`unknown`;export{t as n,e as t};

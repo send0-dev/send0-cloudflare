@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-BfPdxY3F.js";import{n as t}from"./auth-client-D35y6FTU.js";import{L as n,v as r}from"./index-B-KL_iHi.js";function i(){return e({queryKey:n.list(),queryFn:async()=>(await t.members()).data})}function a(){let i=r(`member.manage`);return e({queryKey:n.invites(),queryFn:async()=>(await t.invites()).data,enabled:i})}export{i as n,a as t};

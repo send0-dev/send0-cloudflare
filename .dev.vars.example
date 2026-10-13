@@ -1,0 +1,14 @@
+# Secrets the Deploy to Cloudflare button asks for. Set the plain settings (MAIL_DOMAINS, SES_REGION,
+# ALLOW_SIGNUP) on the same screen: they are the vars in wrangler.jsonc.
+# For `wrangler dev`, copy this to .dev.vars. Never commit .dev.vars.
+
+# Signs download links. At least 32 characters: openssl rand -hex 32
+SECRET_KEY=
+
+# The email of the first account, who becomes the owner. Sign-up is closed to everyone else.
+OWNER_EMAIL=
+
+# An IAM user allowed ses:SendRawEmail for your verified SES identity (in SES_REGION). Required:
+# send0 sends the owner's verification email and all outbound mail through SES.
+SES_ACCESS_KEY_ID=
+SES_SECRET_ACCESS_KEY=

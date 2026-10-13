@@ -1,0 +1,23 @@
+name: Close pull requests
+
+# This repo is generated from send0-dev/send0-v2 on every release, so changes made here would be lost.
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Never checks out the pull request's code.
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr close "$PR" --repo "$REPO" --comment "Thanks! This repository is generated from [send0-dev/send0-v2](https://github.com/send0-dev/send0-v2) on every release, so changes made here would be overwritten. Please open your pull request there instead."

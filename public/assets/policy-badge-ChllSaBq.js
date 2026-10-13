@@ -1,0 +1,1 @@
+import{$ as e}from"./button-DoXIeBzC.js";import{V as t}from"./index-B-KL_iHi.js";import{t as n}from"./badge-Cwi5Qozk.js";var r=e();function i({policy:e}){return(0,r.jsx)(n,{variant:e===`approval`?`warning`:e===`open`?`info`:`neutral`,children:t[e].label})}export{i as t};
